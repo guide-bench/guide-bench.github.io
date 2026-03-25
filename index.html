@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paper Title — CVPR 2026</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: #222;
+      background: #fff;
+    }
+    a { color: #1a6fc4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 56px 0 32px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    .venue {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #c0392b;
+      margin-bottom: 16px;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+
+    /* ── Authors ── */
+    .authors {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px 24px;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    .authors a { color: #222; }
+    .authors a:hover { color: #1a6fc4; text-decoration: underline; }
+    .affiliations {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    /* ── Link buttons ── */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border: 1.5px solid #222;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #222;
+      transition: background .15s, color .15s;
+    }
+    .btn:hover { background: #222; color: #fff; text-decoration: none; }
+    .btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+    /* ── Teaser ── */
+    .teaser {
+      padding: 40px 0 0;
+      text-align: center;
+    }
+    .teaser img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+    .teaser figcaption {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ── Sections ── */
+    section { padding: 48px 0; border-bottom: 1px solid #eee; }
+    section:last-child { border-bottom: none; }
+    section h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    section p { margin-bottom: 12px; color: #333; }
+    section p:last-child { margin-bottom: 0; }
+
+    /* ── Method / Results figure ── */
+    .figure-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .figure-row figure {
+      flex: 1 1 260px;
+      text-align: center;
+    }
+    .figure-row img {
+      max-width: 100%;
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+    }
+    .figure-row figcaption {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* ── Video ── */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-top: 20px;
+      background: #000;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* ── BibTeX ── */
+    .bibtex {
+      background: #f6f6f6;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 20px 24px;
+      font-family: "Courier New", monospace;
+      font-size: 13px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ══ Header ══ -->
+  <header>
+    <span class="venue">CVPR 2026</span>
+    <h1>Your Paper Title Goes Here</h1>
+
+    <div class="authors">
+      <a href="#">Author One</a>
+      <a href="#">Author Two</a>
+      <a href="#">Author Three</a>
+      <a href="#">Author Four</a>
+    </div>
+    <div class="affiliations">
+      University / Institution Name &nbsp;·&nbsp; Another Affiliation
+    </div>
+
+    <div class="links">
+      <!-- PDF: replace href with "paper.pdf" for a local file, or an arXiv/Drive URL -->
+      <a class="btn" href="paper.pdf" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+        Paper (PDF)
+      </a>
+      <a class="btn" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+        arXiv
+      </a>
+      <a class="btn" href="https://github.com/your-repo" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.1c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.93 10.93 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55C20.21 21.37 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg>
+        Code
+      </a>
+      <a class="btn" href="#video">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        Video
+      </a>
+    </div>
+  </header>
+
+  <!-- ══ Teaser ══ -->
+  <section class="teaser">
+    <figure>
+      <!-- Replace with your teaser image -->
+      <img src="assets/teaser.png" alt="Teaser figure" />
+      <figcaption>
+        <b>Figure 1.</b> A brief caption describing your teaser image or pipeline overview.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ══ Abstract ══ -->
+  <section id="abstract">
+    <h2>Abstract</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this with
+      your paper abstract. Keep it concise and clearly communicate the problem,
+      your approach, and the key results.
+    </p>
+    <p>
+      Second paragraph of the abstract if needed. Highlight novelty and
+      quantitative results where possible.
+    </p>
+  </section>
+
+  <!-- ══ Method ══ -->
+  <section id="method">
+    <h2>Method</h2>
+    <p>
+      Describe your method at a high level. Use figures to make the pipeline
+      easy to understand at a glance.
+    </p>
+    <div class="figure-row">
+      <figure>
+        <img src="assets/method.png" alt="Method overview" />
+        <figcaption><b>Figure 2.</b> Overview of the proposed approach.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══ Results ══ -->
+  <section id="results">
+    <h2>Results</h2>
+    <p>
+      Summarize your quantitative and qualitative results. Compare against
+      relevant baselines and highlight the improvements.
+    </p>
+    <div class="figure-row">
+      <figure>
+        <img src="assets/result1.png" alt="Result 1" />
+        <figcaption>Qualitative comparison on Dataset A.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/result2.png" alt="Result 2" />
+        <figcaption>Qualitative comparison on Dataset B.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══ Video ══ -->
+  <section id="video">
+    <h2>Video</h2>
+    <div class="video-wrapper">
+      <!-- Replace VIDEO_ID with your YouTube video ID -->
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ══ BibTeX ══ -->
+  <section id="bibtex">
+    <h2>BibTeX</h2>
+    <div class="bibtex">@inproceedings{yourkey2026,
+  title     = {Your Paper Title Goes Here},
+  author    = {One, Author and Two, Author and Three, Author and Four, Author},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2026}
+}</div>
+  </section>
+
+  <!-- ══ Footer ══ -->
+  <footer>
+    Website template inspired by common CVPR project pages.
+  </footer>
+
+</div><!-- /container -->
+
+</body>
+</html>
