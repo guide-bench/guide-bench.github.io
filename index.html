@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paper Title — CVPR 2026</title>
+  <title>GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks — CVPR 2026</title>
   <style>
     /* ── Reset & base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,9 +32,9 @@
     }
     .venue {
       display: inline-block;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       text-transform: uppercase;
       color: #c0392b;
       margin-bottom: 16px;
@@ -51,14 +51,21 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 4px 24px;
-      font-size: 15px;
+      gap: 4px 20px;
+      font-size: 18px;
       margin-bottom: 8px;
     }
-    .authors a { color: #222; }
-    .authors a:hover { color: #1a6fc4; text-decoration: underline; }
+    .authors .author { white-space: nowrap; }
+    .authors .author a {
+      color: #1a6fc4;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-size: 18px;
+    }
+    .authors .author a:hover { color: #0f4a8a; }
+    .authors sup { font-size: 12px; vertical-align: super; line-height: 0; color: #555; }
     .affiliations {
-      font-size: 13px;
+      font-size: 15px;
       color: #666;
       text-align: center;
       margin-bottom: 28px;
@@ -93,7 +100,7 @@
       text-align: center;
     }
     .teaser img {
-      max-width: 100%;
+      max-width: 400px;
       border-radius: 8px;
       border: 1px solid #e0e0e0;
     }
@@ -114,6 +121,68 @@
     section p { margin-bottom: 12px; color: #333; }
     section p:last-child { margin-bottom: 0; }
 
+    /* ── Benchmark tasks ── */
+    .tasks-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .task-card {
+      flex: 1 1 240px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fafafa;
+    }
+    .task-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111;
+    }
+    .task-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 0;
+    }
+    .task-num {
+      display: inline-block;
+      background: #c0392b;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    /* ── Stats row ── */
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .stat {
+      flex: 1 1 140px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px 12px;
+      background: #fafafa;
+    }
+    .stat .num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #c0392b;
+    }
+    .stat .label {
+      font-size: 13px;
+      color: #555;
+      margin-top: 4px;
+    }
+
     /* ── Method / Results figure ── */
     .figure-row {
       display: flex;
@@ -128,13 +197,38 @@
     .figure-row img {
       max-width: 100%;
       border-radius: 6px;
-      border: 1px solid #e0e0e0;
+      /* border: 1px solid #e0e0e0; */
     }
     .figure-row figcaption {
       margin-top: 8px;
       font-size: 13px;
       color: #555;
     }
+
+    /* ── Results table ── */
+    .results-table-wrap {
+      margin-top: 20px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    thead tr {
+      background: #f0f0f0;
+    }
+    th, td {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+      white-space: nowrap;
+    }
+    td:first-child, th:first-child {
+      text-align: left;
+    }
+    tbody tr:nth-child(even) { background: #fafafa; }
+    .best { font-weight: 700; }
 
     /* ── Video ── */
     .video-wrapper {
@@ -187,46 +281,58 @@
   <!-- ══ Header ══ -->
   <header>
     <span class="venue">CVPR 2026</span>
-    <h1>Your Paper Title Goes Here</h1>
+    <h1>GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks</h1>
 
     <div class="authors">
-      <a href="#">Author One</a>
-      <a href="#">Author Two</a>
-      <a href="#">Author Three</a>
-      <a href="#">Author Four</a>
+      <span class="author"><a href="https://saelyne.com/" target="_blank">Saelyne Yang</a><sup>1,2</sup></span>
+      <span class="author"><a href="https://www.linkedin.com/in/jaesangyu/" target="_blank">Jaesang Yu</a><sup>1</sup></span>
+      <span class="author"><a href="https://www.yihaopeng.tw/" target="_blank">Yi-Hao Peng</a><sup>2</sup></span>
+      <span class="author"><a href="https://qhlin.me/" target="_blank">Kevin Qinghong Lin</a><sup>3</sup></span>
+      <span class="author"><a href="https://chojw.github.io/" target="_blank">Jae Won Cho</a><sup>4</sup></span>
+    </div>
+    <div class="authors" style="margin-top:2px;">
+      <span class="author"><a href="https://people.csail.mit.edu/yalesong/home/" target="_blank">Yale Song</a><sup>5</sup></span>
+      <span class="author"><a href="https://juhokim.com/" target="_blank">Juho Kim</a><sup>1,6</sup></span>
     </div>
     <div class="affiliations">
-      University / Institution Name &nbsp;·&nbsp; Another Affiliation
+      <sup>1</sup>KAIST &nbsp;&middot;&nbsp;
+      <sup>2</sup>Carnegie Mellon University &nbsp;&middot;&nbsp;
+      <sup>3</sup>University of Oxford &nbsp;&middot;&nbsp;
+      <sup>4</sup>Konkuk University &nbsp;&middot;&nbsp;
+      <sup>5</sup>Google Inc. &nbsp;&middot;&nbsp;
+      <sup>6</sup>SkillBench
     </div>
 
     <div class="links">
-      <!-- PDF: replace href with "paper.pdf" for a local file, or an arXiv/Drive URL -->
-      <a class="btn" href="paper.pdf" target="_blank">
+      <a class="btn" href="https://arxiv.org/abs/2603.25864" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
-        Paper (PDF)
+        Paper
       </a>
-      <a class="btn" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">
+      <!-- <a class="btn" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
         arXiv
-      </a>
-      <a class="btn" href="https://github.com/your-repo" target="_blank">
+      </a> -->
+      <a class="btn" href="" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.1c-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.93 10.93 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55C20.21 21.37 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg>
-        Code
+        Dataset (Coming Soon)
+      </a>
+      <!-- <a class="btn" href="https://guide-bench.github.io" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+        Dataset
       </a>
       <a class="btn" href="#video">
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         Video
-      </a>
+      </a> -->
     </div>
   </header>
 
   <!-- ══ Teaser ══ -->
   <section class="teaser">
     <figure>
-      <!-- Replace with your teaser image -->
-      <img src="assets/teaser.png" alt="Teaser figure" />
+      <img src="assets/teaser.png" alt="An example of the GUIDE benchmark showing Behavior State Detection, Intent Prediction, and Help Prediction tasks" />
       <figcaption>
-        <b>Figure 1.</b> A brief caption describing your teaser image or pipeline overview.
+        <b>Figure 1.</b> An example of the GUIDE benchmark, which jointly models three tasks: <b>Behavior State Detection</b>, <b>Intent Prediction</b>, and <b>Help Prediction</b>, to interpret what the user is doing, aiming to achieve, and whether and what they may need assistance with during open-ended software tasks.
       </figcaption>
     </figure>
   </section>
@@ -235,27 +341,67 @@
   <section id="abstract">
     <h2>Abstract</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this with
-      your paper abstract. Keep it concise and clearly communicate the problem,
-      your approach, and the key results.
+      Graphical User Interface (GUI) agents have the potential to assist users in interacting with complex software (e.g., PowerPoint, Photoshop). While prior research has primarily focused on automating user actions through clicks and keystrokes, this paradigm overlooks human intention, where users value the ability to explore, iterate, and refine their ideas while maintaining agency. To move beyond automation and toward collaboration, GUI agents must understand what users are doing and why.
     </p>
     <p>
-      Second paragraph of the abstract if needed. Highlight novelty and
-      quantitative results where possible.
+      We introduce <b>GUIDE</b> (<b>GUI</b> <b>U</b>ser <b>I</b>ntent <b>D</b>etection <b>E</b>valuation), a benchmark that evaluates AI models on their ability to perceive user behavior, infer intent, and provide assistance in open-ended GUI tasks. GUIDE consists of 67.5 hours of screen recordings from 120 novice user demonstrations with think-aloud narrations, across 10 software. GUIDE defines three tasks—(i) Behavior State Detection, (ii) Intent Prediction, and (iii) Help Prediction that test a model's ability to recognize behavior state, reason about goals, and decide when and how to help. Evaluations across eight state-of-the-art multimodal models reveal that all models struggled, achieving only 44.6% and 55.0% accuracy on behavior state and help prediction. However, providing user context significantly improved the performance, raising help prediction by up to 50.2pp, highlighting the critical role of structured user understanding in effective assistance.
     </p>
   </section>
 
-  <!-- ══ Method ══ -->
-  <section id="method">
-    <h2>Method</h2>
+  <!-- ══ Dataset Stats ══ -->
+  <section id="dataset">
+    <h2>Dataset</h2>
     <p>
-      Describe your method at a high level. Use figures to make the pipeline
-      easy to understand at a glance.
+      GUIDE collects screen recordings from 54 novice users across 10 widely used applications spanning five categories: <b>Photo Editing</b> (Photoshop, GIMP), <b>Graphic Design</b> (Figma, Canva), <b>Presentation Design</b> (PowerPoint, Google Slides), <b>Video Editing</b> (Premiere Pro, CapCut), and <b>Data Analysis</b> (Google Sheets, Microsoft Excel). Each session captures both screen recordings and think-aloud narrations to surface users' underlying intentions and cognitive states.
     </p>
+    <div class="stats">
+      <div class="stat"><div class="num">67.5h</div><div class="label">Screen Recordings</div></div>
+      <div class="stat"><div class="num">120</div><div class="label">Demonstrations</div></div>
+      <div class="stat"><div class="num">10</div><div class="label">Applications</div></div>
+      <div class="stat"><div class="num">40</div><div class="label">Open-Ended Tasks</div></div>
+      <div class="stat"><div class="num">54</div><div class="label">Novice Users</div></div>
+    </div>
+  </section>
+
+  <!-- ══ Benchmark Tasks ══ -->
+  <section id="tasks">
+    <h2>Benchmark Tasks</h2>
+    <p>
+      GUIDE defines a unified three-stage evaluation framework — <em>Understanding &rarr; Reasoning &rarr; Assisting</em> — progressing from interpreting user behavior to inferring intentions and ultimately providing helpful assistance.
+    </p>
+    <div class="tasks-grid">
+      <div class="task-card">
+        <span class="task-num">Task 1</span>
+        <h3>Behavior State Detection</h3>
+        <p>Classify a video segment into one of <b>nine behavior states</b> spanning four high-level phases: Planning, Execution, Problem-Solving, and Evaluation — directly from visual cues alone. <b>1,800 annotated instances.</b></p>
+      </div>
+      <div class="task-card">
+        <span class="task-num">Task 2</span>
+        <h3>Intent Prediction</h3>
+        <p>Infer the user's immediate, short-term goal from a video segment. Evaluated as a multiple-choice question with three plausible distractors. <b>1,300 instances.</b></p>
+      </div>
+      <div class="task-card">
+        <span class="task-num">Task 3</span>
+        <h3>Help Prediction</h3>
+        <p>Determine (1) whether the user needs help, and (2) what type of help is most appropriate. Bridges perception and actionable support. <b>1,000 instances</b> (66% help-needed).</p>
+      </div>
+    </div>
+
+    <div class="figure-row" style="margin-top:32px;">
+      <figure style="flex: 1 1 100%;">
+        <img src="assets/tasks.png" alt="Overview of the three core benchmark tasks" />
+        <figcaption>
+          <b>Figure 2.</b> Overview of the three core tasks in GUIDE. (1) Behavior State Detection identifies the user's current behavioral mode. (2) Intent Prediction infers what the user is trying to achieve. (3) Help Prediction determines whether and what kind of assistance is needed.
+        </figcaption>
+      </figure>
+    </div>
+
     <div class="figure-row">
-      <figure>
-        <img src="assets/method.png" alt="Method overview" />
-        <figcaption><b>Figure 2.</b> Overview of the proposed approach.</figcaption>
+      <figure style="flex: 1 1 100%;">
+        <img src="assets/taxonomy.png" alt="Taxonomy of user behavior states" />
+        <figcaption>
+          <b>Figure 3.</b> Our proposed taxonomy of user behavior states in GUI-based software tasks, organized into four main phases: <b>Planning</b>, <b>Execution</b>, <b>Problem-Solving</b>, and <b>Evaluation</b>.
+        </figcaption>
       </figure>
     </div>
   </section>
@@ -264,49 +410,127 @@
   <section id="results">
     <h2>Results</h2>
     <p>
-      Summarize your quantitative and qualitative results. Compare against
-      relevant baselines and highlight the improvements.
+      We evaluate eight state-of-the-art multimodal LLMs in a zero-shot setting. All models struggled with Behavior State Detection and Help Prediction (peaks of 44.6% and 55.0% accuracy), but performance improved substantially when structured user context (behavior state and intent) was provided — boosting help prediction by up to <b>50.2 percentage points</b>.
     </p>
-    <div class="figure-row">
-      <figure>
-        <img src="assets/result1.png" alt="Result 1" />
-        <figcaption>Qualitative comparison on Dataset A.</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/result2.png" alt="Result 2" />
-        <figcaption>Qualitative comparison on Dataset B.</figcaption>
+
+    <div class="results-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Model</th>
+            <th colspan="2">Behavior Detection</th>
+            <th colspan="2">Intent Prediction</th>
+            <th colspan="3">Help Need Detection (Acc)</th>
+            <th colspan="3">Help Content Prediction (Acc)</th>
+          </tr>
+          <tr>
+            <th>&ndash;</th><th>+Prev.</th>
+            <th>&ndash;</th><th>+Behavior</th>
+            <th>&ndash;</th><th>+Behv.</th><th>+Behv.+Intent</th>
+            <th>&ndash;</th><th>+Behv.</th><th>+Behv.+Intent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gemini-2.5-Flash</td>
+            <td>36.91</td><td>38.19</td>
+            <td>65.40</td><td>66.77</td>
+            <td>53.64</td><td>76.33</td><td>78.07</td>
+            <td>49.53</td><td>53.75</td><td>78.59</td>
+          </tr>
+          <tr>
+            <td>Gemini-2.5-Pro</td>
+            <td>42.44</td><td>43.79</td>
+            <td>67.80</td><td>70.16</td>
+            <td class="best">69.82</td><td>84.73</td><td>82.38</td>
+            <td>52.74</td><td>57.03</td><td>79.69</td>
+          </tr>
+          <tr>
+            <td>GPT-4o-mini</td>
+            <td>17.65</td><td>17.07</td>
+            <td>60.76</td><td>62.19</td>
+            <td>46.05</td><td>78.92</td><td>82.26</td>
+            <td>31.32</td><td>42.86</td><td>79.84</td>
+          </tr>
+          <tr>
+            <td>GPT-4o</td>
+            <td>36.32</td><td>37.24</td>
+            <td>61.19</td><td>62.58</td>
+            <td>49.69</td><td class="best">87.79</td><td class="best">87.91</td>
+            <td>45.95</td><td>48.37</td><td>79.78</td>
+          </tr>
+          <tr>
+            <td>Claude-4.5-Sonnet</td>
+            <td class="best">44.61</td><td class="best">45.63</td>
+            <td class="best">71.39</td><td class="best">72.62</td>
+            <td>39.49</td><td>58.56</td><td>59.43</td>
+            <td class="best">55.00</td><td class="best">62.17</td><td class="best">82.79</td>
+          </tr>
+          <tr>
+            <td>Qwen3-VL-8B</td>
+            <td>37.97</td><td>38.13</td>
+            <td>62.70</td><td>64.03</td>
+            <td>52.83</td><td>70.39</td><td>77.36</td>
+            <td>46.06</td><td>50.63</td><td>80.11</td>
+          </tr>
+          <tr>
+            <td>InternVideo2.5-8B</td>
+            <td>21.57</td><td>27.02</td>
+            <td>43.79</td><td>45.13</td>
+            <td>34.36</td><td>35.35</td><td>35.25</td>
+            <td>23.67</td><td>29.15</td><td>73.86</td>
+          </tr>
+          <tr>
+            <td>InternVL3-8B</td>
+            <td>22.57</td><td>24.90</td>
+            <td>46.11</td><td>46.97</td>
+            <td>34.94</td><td>43.73</td><td>46.82</td>
+            <td>27.03</td><td>32.20</td><td>72.97</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px; font-size:13px; color:#666;">
+      Table: Accuracy across all tasks and conditions. <b>Bold</b> = best in column. Context augmentation (+Behavior, +Intent) consistently improves performance, especially for help-related predictions.
+    </p>
+
+    <div class="figure-row" style="margin-top:28px;">
+      <figure style="flex: 1 1 100%;">
+        <img src="assets/online_results.png" alt="Online setting accuracy trends" />
+        <figcaption>
+          <b>Figure 4.</b> Accuracy trends in the online setting, where models receive progressively more of the video segment (25%, 50%, 75%, 100%). Models show consistent improvement as more context becomes available.
+        </figcaption>
       </figure>
     </div>
   </section>
 
   <!-- ══ Video ══ -->
-  <section id="video">
+  <!-- <section id="video">
     <h2>Video</h2>
     <div class="video-wrapper">
-      <!-- Replace VIDEO_ID with your YouTube video ID -->
       <iframe
         src="https://www.youtube.com/embed/VIDEO_ID"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </div>
-  </section>
+  </section> -->
 
   <!-- ══ BibTeX ══ -->
   <section id="bibtex">
     <h2>BibTeX</h2>
-    <div class="bibtex">@inproceedings{yourkey2026,
-  title     = {Your Paper Title Goes Here},
-  author    = {One, Author and Two, Author and Three, Author and Four, Author},
+    <div class="bibtex">@inproceedings{yang2026guide,
+  title     = {GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks},
+  author    = {Yang, Saelyne and Yu, Jaesang and Peng, Yi-Hao and Lin, Kevin Qinghong and Cho, Jae Won and Song, Yale and Kim, Juho},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year      = {2026}
 }</div>
   </section>
 
   <!-- ══ Footer ══ -->
-  <footer>
-    Website template inspired by common CVPR project pages.
-  </footer>
+  <!-- <footer>
+    Website for "GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks" (CVPR 2026)
+  </footer> -->
 
 </div><!-- /container -->
 
