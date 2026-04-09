@@ -247,6 +247,204 @@
       border: 0;
     }
 
+    /* ── Example Videos ── */
+    .examples-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .example-card {
+      flex: 1 1 240px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fafafa;
+    }
+    .example-card video {
+      width: 100%;
+      display: block;
+      background: #000;
+    }
+    .example-card .example-caption {
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #555;
+      text-align: center;
+    }
+    .example-card .example-caption strong {
+      display: block;
+      font-size: 14px;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    /* ── Taxonomy table ── */
+    :root {
+      --tax-planning:       #6b9fd4; /* muted blue */
+      --tax-execution:      #5aab7a; /* muted green */
+      --tax-problemsolving: #d4845a; /* muted orange */
+      --tax-evaluation:     #9b82c8; /* muted purple */
+    }
+    .taxonomy-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 13.5px;
+      table-layout: fixed;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+    .taxonomy-table thead tr { background: #fff; }
+    .taxonomy-table th {
+      padding: 12px 14px;
+      border-bottom: 3px solid;
+      border-right: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .taxonomy-table th:last-child { border-right: none; }
+    .taxonomy-table th:nth-child(1) { background: var(--tax-planning);       border-bottom-color: var(--tax-planning); }
+    .taxonomy-table th:nth-child(2) { background: var(--tax-execution);      border-bottom-color: var(--tax-execution); }
+    .taxonomy-table th:nth-child(3) { background: var(--tax-problemsolving); border-bottom-color: var(--tax-problemsolving); }
+    .taxonomy-table th:nth-child(4) { background: var(--tax-evaluation);     border-bottom-color: var(--tax-evaluation); }
+
+    .taxonomy-table td {
+      padding: 11px 14px 11px 12px;
+      border-top: 1px solid #e5e7eb;
+      border-right: 1px solid #e5e7eb;
+      vertical-align: top;
+      text-align: left;
+      font-size: 13px;
+      color: #444;
+      line-height: 1.55;
+      white-space: normal;
+      border-left: 3px solid transparent;
+    }
+    .taxonomy-table td:last-child { border-right: none; }
+    .taxonomy-table td:nth-child(1) { background: #f4f8fd; border-left-color: var(--tax-planning); }
+    .taxonomy-table td:nth-child(2) { background: #f4faf6; border-left-color: var(--tax-execution); }
+    .taxonomy-table td:nth-child(3) { background: #fdf7f4; border-left-color: var(--tax-problemsolving); }
+    .taxonomy-table td:nth-child(4) { background: #f7f5fc; border-left-color: var(--tax-evaluation); }
+    .taxonomy-table td:empty        { opacity: .45; }
+    .taxonomy-table td strong { color: #111; display: block; margin-bottom: 3px; }
+
+    /* ── Interactive Examples ── */
+    .ex-task-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .ex-task-btn {
+      padding: 8px 20px;
+      border: 1.5px solid #ccc;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      color: #555;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .ex-task-btn:hover { border-color: #c0392b; color: #c0392b; }
+    .ex-task-btn.active { border-color: #c0392b; background: #c0392b; color: #fff; }
+    .ex-panel {
+      display: flex;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      min-height: 340px;
+    }
+    .ex-sidebar {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #ddd;
+      background: #fafafa;
+      flex-shrink: 0;
+      width: 108px;
+    }
+    .ex-num-btn {
+      padding: 14px 14px;
+      border: none;
+      border-bottom: 1px solid #eee;
+      border-left: 3px solid transparent;
+      background: transparent;
+      text-align: left;
+      font-size: 13px;
+      color: #777;
+      cursor: pointer;
+      transition: all .15s;
+      line-height: 1.3;
+    }
+    .ex-num-btn:last-child { border-bottom: none; }
+    .ex-num-btn:hover { background: #fff; color: #c0392b; }
+    .ex-num-btn.active { background: #fff; color: #c0392b; font-weight: 700; border-left-color: #c0392b; }
+    .ex-main {
+      flex: 1;
+      display: flex;
+      gap: 0;
+      padding: 24px;
+      min-width: 0;
+    }
+    .ex-screenshot-col {
+      flex: 0 0 52%;
+      padding-right: 20px;
+      border-right: 1px solid #eee;
+    }
+    .ex-screenshot-col img {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+    }
+    .ex-quote {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #555;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .ex-quote-icon {
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: #c0392b;
+      opacity: .8;
+    }
+    .ex-info-col {
+      flex: 1;
+      padding-left: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      min-width: 0;
+    }
+    .ex-info-col .ex-field { margin-bottom: 10px; color: #333; }
+    .ex-info-col .ex-field-label { font-weight: 700; color: #111; }
+    .ex-state-tag {
+      display: inline-block;
+      background: #c0392b;
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .ex-description { font-size: 13.5px; color: #444; margin-top: 4px; line-height: 1.6; }
+    .ex-choice { font-size: 13.5px; color: #666; margin: 3px 0; }
+    .ex-choice.correct { font-weight: 700; color: #111; }
+    @media (max-width: 680px) {
+      .ex-main { flex-direction: column; }
+      .ex-screenshot-col { flex: none; padding-right: 0; border-right: none; border-bottom: 1px solid #eee; padding-bottom: 16px; margin-bottom: 16px; }
+      .ex-info-col { padding-left: 0; }
+    }
+
     /* ── BibTeX ── */
     .bibtex {
       background: #f6f6f6;
@@ -363,6 +561,43 @@
     </div>
   </section>
 
+  <!-- ══ Example Demonstrations ══ -->
+  <section id="examples">
+    <h2>Example Demonstrations</h2>
+    <p>
+      Below are sample screen recording clips from the GUIDE dataset, illustrating users performing open-ended tasks across different applications.
+    </p>
+    <div class="examples-grid">
+      <div class="example-card">
+        <video controls muted playsinline>
+          <source src="assets/example_videos/video_1_Photoshop.mp4" type="video/mp4" />
+        </video>
+        <div class="example-caption">
+          <strong>Photoshop</strong>
+          Photo Editing
+        </div>
+      </div>
+      <div class="example-card">
+        <video controls muted playsinline>
+          <source src="assets/example_videos/video_2_GoogleSlides.mp4" type="video/mp4" />
+        </video>
+        <div class="example-caption">
+          <strong>Google Slides</strong>
+          Presentation Design
+        </div>
+      </div>
+      <div class="example-card">
+        <video controls muted playsinline>
+          <source src="assets/example_videos/video_3_PremierePro.mp4" type="video/mp4" />
+        </video>
+        <div class="example-caption">
+          <strong>Premiere Pro</strong>
+          Video Editing
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ Benchmark Tasks ══ -->
   <section id="tasks">
     <h2>Benchmark Tasks</h2>
@@ -396,13 +631,98 @@
       </figure>
     </div>
 
-    <div class="figure-row">
-      <figure style="flex: 1 1 100%;">
-        <img src="assets/taxonomy.png" alt="Taxonomy of user behavior states" />
-        <figcaption>
-          <b>Figure 3.</b> Our proposed taxonomy of user behavior states in GUI-based software tasks, organized into four main phases: <b>Planning</b>, <b>Execution</b>, <b>Problem-Solving</b>, and <b>Evaluation</b>.
-        </figcaption>
-      </figure>
+    <div style="margin-top:28px; overflow-x:auto;">
+      <table class="taxonomy-table">
+        <thead>
+          <tr>
+            <th>Planning</th>
+            <th>Execution</th>
+            <th>Problem-Solving</th>
+            <th>Evaluation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Task Understanding and Preparation</strong><br>
+              Focused on logistics, interpreting tasks, gathering assets, and configuring environment.
+            </td>
+            <td>
+              <strong>Exploration and Decision-Making</strong><br>
+              Experimenting with options to understand effects and decide which to use.
+            </td>
+            <td>
+              <strong>Frustration</strong><br>
+              Encountering blockers, showing signs of being stuck, confused, or annoyed.
+            </td>
+            <td>
+              <strong>Waiting and Monitoring</strong><br>
+              Passive state, waiting for system-controlled processes to complete.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Ideation and Planning</strong><br>
+              High-level conceptual work, brainstorming ideas, and outlining structure.
+            </td>
+            <td>
+              <strong>Performing Actions</strong><br>
+              Confidently using software with purposeful actions executed with little hesitation.
+            </td>
+            <td>
+              <strong>Debugging</strong><br>
+              Actively investigating problem causes, forming and testing hypotheses.
+            </td>
+            <td>
+              <strong>Assessment</strong><br>
+              Intentionally pausing to review and evaluate work quality and accuracy.
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <strong>Seeking External Help</strong><br>
+              Recognizing knowledge gaps and turning to external resources for guidance.
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:10px; font-size:13px; color:#666;">
+        <b>Figure 3.</b> Our proposed taxonomy of user behavior states in GUI-based software tasks, organized into four main phases: <b>Planning</b>, <b>Execution</b>, <b>Problem-Solving</b>, and <b>Evaluation</b>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ Interactive Examples ══ -->
+  <section id="task-examples">
+    <h2>Benchmark Task Examples</h2>
+    <p>Annotated examples from the GUIDE dataset illustrating each of the three benchmark tasks.</p>
+
+    <div class="ex-task-selector" style="margin-top:20px;">
+      <button class="ex-task-btn active" data-task="0">Task 1: Behavior State Detection</button>
+      <button class="ex-task-btn" data-task="1">Task 2: Intent Prediction</button>
+      <button class="ex-task-btn" data-task="2">Task 3: Help Prediction</button>
+    </div>
+
+    <div class="ex-panel">
+      <div class="ex-sidebar">
+        <button class="ex-num-btn active" data-ex="0">Example 1</button>
+        <button class="ex-num-btn" data-ex="1">Example 2</button>
+        <button class="ex-num-btn" data-ex="2">Example 3</button>
+        <button class="ex-num-btn" data-ex="3">Example 4</button>
+      </div>
+      <div class="ex-main">
+        <div class="ex-screenshot-col">
+          <img id="ex-img" src="assets/examples/task_1_1.png" alt="Example screenshot" />
+          <p id="ex-quote" class="ex-quote">
+            <svg class="ex-quote-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            <span id="ex-quote-text"></span>
+          </p>
+        </div>
+        <div class="ex-info-col" id="ex-info"></div>
+      </div>
     </div>
   </section>
 
@@ -534,5 +854,215 @@
 
 </div><!-- /container -->
 
+<script>
+(function () {
+  const data = [
+    // ── Task 1: Behavior State Detection ──
+    [
+      {
+        img: "assets/examples/task_1_1.png",
+        software: "Premiere Pro",
+        task: "Edit a short instructional video to clearly guide a process.",
+        quote: "\u201cOkay, I downloaded it already. Delete my test, so I don\u2019t get confused. I have the video.\u201d",
+        type: "state",
+        stateLabel: "Task Understanding and Preparation",
+        description: "The user is preparing their digital workspace before starting the editing task. They locate the necessary video file on their desktop and delete a superfluous \u2018test\u2019 file to prevent confusion."
+      },
+      {
+        img: "assets/examples/task_1_2.png",
+        software: "Google Slides",
+        task: "Create a product pitch deck highlighting a product\u2019s key features.",
+        quote: "\u201cI would like to just use this design or the white some minimalistic like iOS design. Oh, this one. This one looks good. Okay, let\u2019s just\u2026\u201d",
+        type: "state",
+        stateLabel: "Exploration and Decision-Making",
+        description: "The user is actively browsing and comparing different templates, as shown by the scrolling and hovering behavior. The narration (\u2018This one looks good\u2019) confirms they are evaluating options to make a final decision."
+      },
+      {
+        img: "assets/examples/task_1_3.png",
+        software: "CapCut",
+        task: "Design a creative intro using animated text.",
+        quote: "\u201cOkay, that\u2019s strange. That\u2019s very strange, honestly.\u201d",
+        type: "state",
+        stateLabel: "Frustration",
+        description: "The user verbally expresses confusion (\u2018that\u2019s strange\u2019) after the software behaved in an unexpected way. They are momentarily paused, indicating a blocker in their workflow before they decide on a new course of action."
+      },
+      {
+        img: "assets/examples/task_1_4.png",
+        software: "Google Sheets",
+        task: "Summarize and visualize product sales by category or region.",
+        quote: "(no narration)",
+        type: "state",
+        stateLabel: "Seeking External Help",
+        description: "The user is unable to find a feature and turns to ChatGPT for assistance. They type a question clarifying their problem, wait for the response, and then read the provided instructions."
+      }
+    ],
+    // ── Task 2: Intent Prediction ──
+    [
+      {
+        img: "assets/examples/task_2_1.png",
+        software: "Canva",
+        task: "Design a mobile sign-up screen for a fictional app.",
+        quote: "\u201cSo now that I have the frame as a design base, I need to include the input field for name, email.\u201d",
+        type: "intent",
+        choices: [
+          { letter: "A", text: "Rename the design file to reflect the new project", correct: false },
+          { letter: "B", text: "Add the required input fields to the design", correct: true },
+          { letter: "C", text: "Search for a suitable illustration to use as a header", correct: false },
+          { letter: "D", text: "Resize the canvas to a custom dimension", correct: false }
+        ]
+      },
+      {
+        img: "assets/examples/task_2_2.png",
+        software: "Excel",
+        task: "Design a Gantt chart for a mini project.",
+        quote: "\u201cokay looks perfect, I need to adjust the end date as well\u201d",
+        type: "intent",
+        choices: [
+          { letter: "A", text: "Adjust the end date of the chart\u2019s horizontal axis", correct: true },
+          { letter: "B", text: "Adjust the date interval of the chart\u2019s horizontal axis", correct: false },
+          { letter: "C", text: "Reverse the order of the chart\u2019s vertical axis", correct: false },
+          { letter: "D", text: "Adjust the start date of the chart\u2019s horizontal axis", correct: false }
+        ]
+      },
+      {
+        img: "assets/examples/task_2_3.png",
+        software: "Premiere Pro",
+        task: "Transform a long video into a short-form clip.",
+        quote: "\u201cWhen this slot comes, we should put some kind of image here.\u201d",
+        type: "intent",
+        choices: [
+          { letter: "A", text: "Create a new text layer above the existing video track", correct: false },
+          { letter: "B", text: "Add an image to a specific empty slot in the timeline", correct: true },
+          { letter: "C", text: "Apply a transition effect to the end of a video clip", correct: false },
+          { letter: "D", text: "Add a video clip to the end of the current sequence", correct: false }
+        ]
+      },
+      {
+        img: "assets/examples/task_2_4.png",
+        software: "PowerPoint",
+        task: "Create a product pitch deck highlighting a product\u2019s key features.",
+        quote: "\u201cPaste, paste, paste, paste. Done. Done.\u201d",
+        type: "intent",
+        choices: [
+          { letter: "A", text: "Align the logos with the main text boxes.", correct: false },
+          { letter: "B", text: "Delete the logos from all the slides.", correct: false },
+          { letter: "C", text: "Duplicate the logos onto the remaining slides.", correct: true },
+          { letter: "D", text: "Change the color of the logos on all slides.", correct: false }
+        ]
+      }
+    ],
+    // ── Task 3: Help Prediction ──
+    [
+      {
+        img: "assets/examples/task_3_1.png",
+        software: "GIMP",
+        task: "Create a bakery logo with a warm, friendly identity.",
+        quote: "\u201cWhere could I insert the text? [\u2026] I\u2019m just going to, because the help function I don\u2019t quite understand, but I can see if I can add it. Find it in Google.\u201d",
+        type: "help",
+        labelKey: "Help Content",
+        choices: [
+          { letter: "A", text: "how to add another image as a layer", correct: false },
+          { letter: "B", text: "find the tool to add text", correct: true },
+          { letter: "C", text: "remove the image background", correct: false },
+          { letter: "D", text: "add a background color or shape", correct: false }
+        ]
+      },
+      {
+        img: "assets/examples/task_3_2.png",
+        software: "Google Slides",
+        task: "Create a quiz deck with multiple-choice questions testing sustainability facts.",
+        quote: "\u201cI think I made a mistake here and I need to rectify this.\u201d",
+        type: "help",
+        labelKey: "Help Content",
+        choices: [
+          { letter: "A", text: "align the answer choice boxes", correct: false },
+          { letter: "B", text: "how to create a quiz slide template", correct: false },
+          { letter: "C", text: "how to fix a self-identified audio related error", correct: true },
+          { letter: "D", text: "add animation to reveal the correct answer", correct: false }
+        ]
+      },
+      {
+        img: "assets/examples/task_3_3.png",
+        software: "Photoshop",
+        task: "Create a composite from two images.",
+        quote: "\u201cI\u2019ll scale it. I just want to scale this up. How do I keep it?\u201d",
+        type: "help",
+        labelKey: "Help Content",
+        choices: [
+          { letter: "A", text: "how to use the perspective or warp transform tools", correct: false },
+          { letter: "B", text: "center the new layer on the canvas", correct: false },
+          { letter: "C", text: "how to use layer blend modes", correct: false },
+          { letter: "D", text: "maintain aspect ratio while scaling", correct: true }
+        ]
+      },
+      {
+        img: "assets/examples/task_3_4.png",
+        software: "Canva",
+        task: "Design a custom 404 error page with a visual and animated element.",
+        quote: "\u201cSo I believe this is, this is great. I believe it\u2019s just simple.\u201d",
+        type: "help",
+        labelKey: "Help Need",
+        choices: [
+          { letter: "A", text: "help needed", correct: false },
+          { letter: "B", text: "no help needed", correct: true }
+        ]
+      }
+    ]
+  ];
+
+  let curTask = 0, curEx = 0;
+
+  function render() {
+    const ex = data[curTask][curEx];
+    document.getElementById("ex-img").src = ex.img;
+    document.getElementById("ex-img").alt = ex.software + " example screenshot";
+    document.getElementById("ex-quote-text").textContent = ex.quote;
+
+    const info = document.getElementById("ex-info");
+    let html = '';
+    html += '<div class="ex-field"><span class="ex-field-label">Software:</span> ' + ex.software + '</div>';
+    html += '<div class="ex-field"><span class="ex-field-label">Task:</span> ' + ex.task + '</div>';
+
+    if (ex.type === "state") {
+      html += '<div class="ex-field"><span class="ex-field-label">Behavior State:</span>';
+      html += '<br><span class="ex-state-tag">' + ex.stateLabel + '</span>';
+      html += '<div class="ex-description">' + ex.description + '</div></div>';
+    } else {
+      const labelKey = ex.type === "intent" ? "Intent" : ex.labelKey;
+      html += '<div class="ex-field"><span class="ex-field-label">' + labelKey + ':</span></div>';
+      ex.choices.forEach(function (c) {
+        html += '<div class="ex-choice' + (c.correct ? ' correct' : '') + '">';
+        html += c.letter + ': ' + c.text;
+        html += '</div>';
+      });
+    }
+    info.innerHTML = html;
+  }
+
+  document.querySelectorAll(".ex-task-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      curTask = parseInt(btn.dataset.task);
+      curEx = 0;
+      document.querySelectorAll(".ex-task-btn").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      document.querySelectorAll(".ex-num-btn").forEach(function (b, i) {
+        b.classList.toggle("active", i === 0);
+      });
+      render();
+    });
+  });
+
+  document.querySelectorAll(".ex-num-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      curEx = parseInt(btn.dataset.ex);
+      document.querySelectorAll(".ex-num-btn").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
 </body>
 </html>
